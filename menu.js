@@ -31,6 +31,16 @@
 */
 
 //CODE HERE
+console.log("---Problem 1---")
+let pizza = {
+    name: "Thin Crust",
+    price: 314.16,
+    category: "Pizza",
+    popularity: 10,
+    rating: 10,
+    tags: ["Thin Crust", "Crispy", "Gluten-Rich"]
+
+}
 
 
 
@@ -43,7 +53,8 @@
 */
 
 //CODE HERE
-
+console.log("---Problem 2---")
+console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +64,8 @@
 */
 
 //CODE HERE
-
+console.log(pizza[`tags`][1])
+console.log(pizza.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -63,6 +75,8 @@
 */
 
 //CODE HERE
+let thinCrustPrice = pizza.price
+console.log(thinCrustPrice)
 
 
 /*
@@ -73,6 +87,8 @@
 */
 
 //CODE HERE
+let thinCrustCat = pizza.category
+console.log(thinCrustCat)
 
 
 //////////////////PROBLEM 3////////////////////
@@ -88,7 +104,14 @@
 */
 
 //CODE HERE
+console.log("---Problem 3---")
+let foodArr = [{...pizza, name: "Cheap Crust", price: 0.99, popularity: 7, rating: 8, tags: ["Arrrgh!", "Shiver me Breadsticks!"]}, 
+{...pizza, name: "Creep Crust", price: 6.66, popularity: 9, rating: 8, tags: ["Spooky", "Scared Silly"]},
+{...pizza, name: "Gold Stuffed Pizza", price: 1000000, popularity: 1, rating: 10, tags: ["Shiver me Breadsticks!", "Boujie"]},
+{...pizza, name: "Hummus Pizza", price: 3.45, popularity: 7, rating: 6, tags: ["Gluten Free", "It's all greek to me!"]},
+{...pizza, name: "Old Yorker Pizza", price: 16.32, popularity: 3, rating: 5, tags:["A little gamey", "savoury"]}]
 
+console.log(foodArr)
 
 
 //////////////////PROBLEM 4////////////////////
@@ -104,9 +127,10 @@
 */
 
 //CODE HERE
+console.log("---Problem 4---")
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-
+const tagSearch = (search) => foodArr.filter((ele) => ele.tags == [search])
+console.log (tagSearch("Shiver me Breadsticks!"))
 
 
 //////////////////PROBLEM 5////////////////////
@@ -149,8 +173,11 @@
 */
 
 //CODE HERE
-
-
+console.log("---Problem 5---")
+const filterByProperty = (prop, number, type) => {
+const filteredFood = foodArr.filter((ele) => ele.category == prop && ele.price > number &&  ele.popularity > type )
+return filteredFood
+}
 /*
     Invoke the `filterByProperty` function passing
     in a value for each paramter.
@@ -159,3 +186,9 @@
 */
 
 //CODE HERE
+const propThreshold = "Pizza"
+const priceThreshold = 5
+const above = 5
+
+
+console.log(filterByProperty(propThreshold, priceThreshold, above))

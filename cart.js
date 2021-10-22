@@ -34,10 +34,10 @@ const cart = [
 ]
 
 //CODE HERE
-
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
-
-
+console.log("---Problem 1---")
+const curCart = cart.map((ele) => ele.price)
+const summedPrice = curCart.reduce((a, b) => a + b) 
+console.log (summedPrice)
 //////////////////PROBLEM 2////////////////////
 /*  
     Write a function called `calcFinalPrice` that
@@ -54,6 +54,15 @@ const cart = [
 */
 
 //CODE HERE
+let total = 15.43
+let discount = 3.00
+let tax = .07
+
+console.log("---Problem 2---")
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    return (cartTotal * (tax + 1) - couponValue)
+}
+console.log(calcFinalPrice(total, discount, tax))
 
 
 
@@ -79,6 +88,11 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+    First Name: Need the name of your customer
+    Last Name: Same as above
+    Credit Card Info: So you can charge them
+    Allergies: So you dont have to worry about a lawsuit
+    Seating Preferences: Bar or Table
 
 */
 
@@ -88,3 +102,10 @@ const cart = [
 */
 
 //CODE HERE
+let customer = {
+    firstName: "John", 
+    lastName: "Doe", 
+    creditCard: 1234567890, 
+    allergies: "air", 
+    seatingPreferences: "Bar"}
+console.log (customer)

@@ -22,8 +22,9 @@
 */
 
 //CODE HERE
-
-
+console.log("---Problem 1---")
+const greetUser = (username) => `Welcome back, ${username}`
+console.log(greetUser("Silverfish"))
 
 
 
@@ -47,11 +48,18 @@
         // `You're in our delivery zone!`
 */
 
-const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
-
 //CODE HERE
-
-
+console.log("---Problem 2---")
+const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
+const canWeDeliver = (zipcode) => {
+   const tempArray = deliveryAreaZipCodes.filter((ele) => ele == zipcode)
+   if (tempArray[0]){
+       console.log("You're in our delivery zone!")
+   } else {
+       console.log("Sorry, we can't deliver to that address")
+   }
+}
+canWeDeliver(85209)
 
 /* 
     Problem 2 Continued
@@ -71,8 +79,15 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 */
 
 // CODE HERE
-
-
+//STUDENT NOTE: not gonna lie, brain went right passed the `includes` method since the higher order array functions were still fresh in my brain x_x. looks like im gonna be doing that now lol...
+const canWeDeliverTwo = (zipcode) => {
+    if(deliveryAreaZipCodes.includes(zipcode)){
+        console.log("You're in the zone, AUTO ZONE!")
+    } else {
+        console.log("Nope, looks like MAACO will get you there instead")
+    }
+}
+canWeDeliverTwo(85205)
 //////////////////PROBLEM 3////////////////////
 /* 
     Below is an array of objects that have some
@@ -107,7 +122,8 @@ const deals = [
 */
 
 //CODE HERE
-
+const discountFix = (newDiscount) => deals[0].title.replace('15% Off', newDiscount)
+console.log(discountFix("10% Off!"))
 
 
 /*
@@ -124,3 +140,5 @@ const deals = [
 */
 
 //CODE HERE
+const monthFix = (newMonth) => deals[1].desc.replace('March', newMonth)
+console.log(monthFix("April"))
