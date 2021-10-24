@@ -123,7 +123,7 @@ class Manager extends Employee {
 */
 
 //CODE HERE
-let manager = new Manager("Winston", "weekday mornings, weekday afternoons", "Cece & Schmidt")
+let manager = new Manager("Winston", "weekday mornings, weekday afternoons", ["Cece", "Schmidt"])
 
 /*
     Call the `getEmployees` method on the

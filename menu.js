@@ -129,7 +129,7 @@ console.log(foodArr)
 //CODE HERE
 console.log("---Problem 4---")
 
-const tagSearch = (search) => foodArr.filter((ele) => ele.tags == [search])
+const tagSearch = (search) => foodArr.filter((ele) => ele.tags.includes(search))
 console.log (tagSearch("Shiver me Breadsticks!"))
 
 
@@ -174,9 +174,22 @@ console.log (tagSearch("Shiver me Breadsticks!"))
 
 //CODE HERE
 console.log("---Problem 5---")
+// const filterByProperty = (prop, number, type) => {
+//     const filteredFood = foodArr.filter((ele) => ele.category == prop && ele.price > number &&  ele.popularity)
+//     return filteredFood
+// }
 const filterByProperty = (prop, number, type) => {
-const filteredFood = foodArr.filter((ele) => ele.category == prop && ele.price > number &&  ele.popularity > type )
-return filteredFood
+    let compare
+    if (type === "above"){
+        compare = (ele) => ele[prop] > number
+    } else if (type === "below"){
+        compare = (ele) => ele[prop] < number
+    } else {
+        console.log ("Invalid Parameter on type")
+        return []
+    }
+    const filteredFood = foodArr.filter((ele) => compare(ele))
+    return filteredFood
 }
 /*
     Invoke the `filterByProperty` function passing
@@ -186,9 +199,9 @@ return filteredFood
 */
 
 //CODE HERE
-const propThreshold = "Pizza"
+const propThreshold = "popularity"
 const priceThreshold = 5
-const above = 5
+const type = "below"
 
 
-console.log(filterByProperty(propThreshold, priceThreshold, above))
+console.log(filterByProperty(propThreshold, priceThreshold, type))
